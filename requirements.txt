@@ -1,0 +1,4 @@
+ifstools>=1.4
+pycryptodome
+kbinxml
+tqdm
