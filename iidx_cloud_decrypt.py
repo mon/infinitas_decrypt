@@ -11,7 +11,7 @@ dec_base = r'D:\infinitas\beatmania IIDX INFINITAS (Decrypted game files)'
 
 # monkeypatching
 class CryptFile(GenericFile):
-    def _load_from_ifs(self, convert_kbin = True):
+    def _load_from_ifs(self, convert_kbin = True, **kwargs):
         data = self.ifs_data.get(self.start, self.size)
         data = decrypt(self.name + 'r', data)
         return data
