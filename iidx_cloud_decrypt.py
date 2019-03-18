@@ -49,6 +49,10 @@ def main():
             if dst[-1].isdigit():
                 dst = dst[:-1]
 
+            if not os.path.isfile(src):
+                tqdm.write("WARNING: mounttable file '{}' doesn't exist, skipping".format(src))
+                continue
+
             ifs = IFS(src)
             for f in ifs.tree.all_files:
                 if f.name.endswith('r') and type(f) == GenericFile and type(f.parent) == GenericFolder:
